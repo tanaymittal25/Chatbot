@@ -77,7 +77,7 @@ try:
     raise ZeroDivisionError("Lol")
     model.load("model.tflearn")
 except ZeroDivisionError:
-    model.fit(training, output, n_epoch=100, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
     model.save("model.tflearn")
 
 
@@ -110,9 +110,8 @@ def chat():
             for tg in data["intents"]:
                 if tg['tag'] == tag:
                     response = tg['responses']
-            print(random.choice(response))
+            print("Tan:", random.choice(response))
         else:
-            print("I don't understand")
-
+            print("Tan: I don't understand")
 
 chat()
